@@ -37,7 +37,7 @@
   },
   "scripts": {
 	"test": "jest",
-    "tsc": "tsc"
+    "build": "tsc"
   },
   "sharedNodeModuleProjectSLinkEnvVar": ["JUNIT_XML_NODE_MODULE_SLINK"],
   "sharedNodeModuleProjectSLinks": ["slink_group_deps.ts.adligo.org", "fab_group_deps.ts.adligo.org"],
