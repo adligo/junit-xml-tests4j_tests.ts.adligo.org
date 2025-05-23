@@ -16,8 +16,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { ApiTrial, AssertionContext, Test, TestResult, TrialSuite } from './tests4ts.ts.adligo.org@slink/tests4ts.mjs';
-import { JUnitXmlGenerator } from './junitXml.tests4j.ts.adligo.org@slink/junitXmlTests4jGenerator.mjs';
+// The following commented out xml tags with slinks will flag to the slink command line program, that these paths can be modfied 
+// from the slink logic instead of hard coding them like I have currently done.
+//<slinks>
+import { ApiTrial, AssertionContext, Test, TestResult, TrialSuite } from '../../tests4ts.ts.adligo.org/src/tests4ts.mjs';
+import { JUnitXmlGenerator } from '../../junitXml.tests4j.ts.adligo.org/src/junitXmlTests4jGenerator.mjs';
+//</slinks>
 
 /**
  * Tests for the JUnitXmlGenerator
