@@ -36,11 +36,16 @@
     "url": "git+https://github.com/adligo/junitXml_tests.tests4j.ts.adligo.org.git"
   },
   "scripts": {
-	"test": "jest",
+    "tests": "bun run src/junitXmlApiTrial.ts",
     "build": "tsc"
   },
-  "sharedNodeModuleProjectSLinkEnvVar": ["JUNIT_XML_NODE_MODULE_SLINK"],
-  "sharedNodeModuleProjectSLinks": ["slink_group_deps.ts.adligo.org", "fab_group_deps.ts.adligo.org"],
+  "sharedNodeModuleProjectSLinkEnvVar": [
+    "JUNIT_XML_NODE_MODULE_SLINK"
+  ],
+  "sharedNodeModuleProjectSLinks": [
+    "slink_group_deps.ts.adligo.org",
+    "fab_group_deps.ts.adligo.org"
+  ],
   "type": "module",
   "version": "0.0.1"
 }
