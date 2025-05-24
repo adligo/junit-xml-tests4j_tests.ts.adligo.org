@@ -25,4 +25,6 @@ replay_pid*
 /build
 /build/
 /build/*
-
+/dist/
+/dist
+/dist/*
