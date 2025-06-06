@@ -5,6 +5,7 @@
   },
   "description": "This is the implementation of junitXml_tests.tests4j.ts.adligo.org.",
   "dependencies": {
+    "npm": "^11.4.0",
     "@types/node": "^22.15.21",
     "fs": "^0.0.1-security",
     "gulp": "^4.0.2",
