@@ -37,7 +37,8 @@
     "url": "git+https://github.com/adligo/junitXml_tests.tests4j.ts.adligo.org.git"
   },
   "scripts": {
-    "tests": "bun run src/junitXmlApiTrial.ts",
+    "tests": "c8 node dist/junit-xml-tests4j_tests.ts.adligo.org/src/junitXmlApiTrial.js",
+    "tsTests": "bun src/junitXmlApiTrial.ts",
     "build": "tsc"
   },
   "sharedNodeModuleProjectSLinkEnvVar": [
