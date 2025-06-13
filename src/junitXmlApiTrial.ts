@@ -29,9 +29,11 @@ import { JUnitXmlGenerator } from '../../junit-xml-tests4j.ts.adligo.org/src/jun
  * Tests for the JUnitXmlGenerator
  */
 class JUnitXmlGeneratorTrial extends ApiTrial {
+    public static readonly CLAZZ_NAME = 'org.adligo.ts.junit-xml-tests4j_tests.JUnitXmlGeneratorTrial';
+
   public static readonly testGenerateXmlBasic = new Test(TestParams.of(
-    'org.adligo.tests4j.junitXml_tests.JUnitXmlGeneratorTrial.' +
-    'testGenerateXmlBasic'), (ac: I_AssertionContext) => {
+      JUnitXmlGeneratorTrial.CLAZZ_NAME +
+    '.testGenerateXmlBasic'), (ac: I_AssertionContext) => {
       // Create a mock trial with passing tests
       const mockTest1 = new Test(TestParams.of('testToExponent2to8()'), (ac) => { });
       const mockTest2 = new Test(TestParams.of('testToExponent16to64()'), (ac) => { });
@@ -57,8 +59,8 @@ class JUnitXmlGeneratorTrial extends ApiTrial {
     });
 
   public static readonly testGenerateXmlWithFailures = new Test(TestParams.of(
-    'org.adligo.tests4j.junitXml_tests.JUnitXmlGeneratorTrial.' +
-    'testGenerateXmlWithFailures'), (ac: I_AssertionContext) => {
+      JUnitXmlGeneratorTrial.CLAZZ_NAME +
+    '.testGenerateXmlWithFailures'), (ac: I_AssertionContext) => {
       // Create a mock trial with a failing test
       const mockTest1 = new Test('passingTest', (ac) => { });
       const mockTest2 = new Test('failingTest', (ac) => { throw new Error('Test failure message'); });
@@ -82,8 +84,8 @@ class JUnitXmlGeneratorTrial extends ApiTrial {
     });
 
   public static readonly testExtractClassName = new Test(TestParams.of(
-    'org.adligo.tests4j.junitXml_tests.JUnitXmlGeneratorTrial.' +
-    'testExtractClassName'), (ac: I_AssertionContext) => {
+      JUnitXmlGeneratorTrial.CLAZZ_NAME +
+    '.testExtractClassName'), (ac: I_AssertionContext) => {
       const generator = new JUnitXmlGenerator();
 
       // Use private method via any type
@@ -102,7 +104,7 @@ class JUnitXmlGeneratorTrial extends ApiTrial {
     });
 
   constructor() {
-    super('JUnitXmlGeneratorTrial', [
+    super(      JUnitXmlGeneratorTrial.CLAZZ_NAME , [
       JUnitXmlGeneratorTrial.testExtractClassName, JUnitXmlGeneratorTrial.testGenerateXmlBasic, JUnitXmlGeneratorTrial.testGenerateXmlWithFailures
     ]);
   }
