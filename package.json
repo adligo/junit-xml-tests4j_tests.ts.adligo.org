@@ -38,9 +38,9 @@
   },
   "scripts": {
     "build": "tsc",
-    "buildAndTest": "tsc && c8 node dist/junit-xml-tests4j_tests.ts.adligo.org/src/junitXmlApiTrial.js",
-    "tests": "c8 node dist/junit-xml-tests4j_tests.ts.adligo.org/src/junitXmlApiTrial.js",
-    "tsTests": "bun src/junitXmlApiTrial.ts"
+    "buildAndTest": "tsc && c8 node dist/junit-xml-tests4j_tests.ts.adligo.org/src/junitXmlApiTrial.mjs",
+    "tests": "c8 node dist/junit-xml-tests4j_tests.ts.adligo.org/src/junitXmlApiTrial.mjs",
+    "tsTests": "bun src/junitXmlApiTrial.mts"
   },
   "sharedNodeModuleProjectSLinkEnvVar": [
     "JUNIT_XML_NODE_MODULE_SLINK"
