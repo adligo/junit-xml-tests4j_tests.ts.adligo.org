@@ -53,8 +53,8 @@ class JUnitXmlGeneratorTrial extends ApiTrial {
       ac.isTrue(xml.includes('tests="2"'), 'XML should show 2 tests');
       ac.isTrue(xml.includes('failures="0"'), 'XML should show 0 failures');
       ac.isTrue(xml.includes('hostname="WHITESNAKE"'), 'XML should have correct hostname');
-      ac.isTrue(xml.includes('<testcase name="testToExponent2to8"'), 'XML should include first test');
-      ac.isTrue(xml.includes('<testcase name="testToExponent16to64"'), 'XML should include second test');
+      ac.isTrue(xml.includes('<testcase name="org.adligo.collections.shared.common.Base2ExponentsSourceFileTrial.testToExponent2to8"'), 'XML should include first test');
+      ac.isTrue(xml.includes('<testcase name="org.adligo.collections.shared.common.Base2ExponentsSourceFileTrial.testToExponent16to64"'), 'XML should include second test');
     }),
     new Test('testGenerateXmlWithFailures', (ac: I_AssertionContext) => {
       // Create a mock trial with a failing test
