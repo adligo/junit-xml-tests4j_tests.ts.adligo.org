@@ -19,7 +19,10 @@
 // The following commented out xml tags with slinks will flag to the slink command line program, that these paths can be modfied 
 // from the slink logic instead of hard coding them like I have currently done.
 //<slinks>
-import { Test, TestParams, TrialSuite, DefaultAssertionContextFactory, DefaultTestResultFactory } from '../../tests4ts.ts.adligo.org/src/tests4ts.mjs';
+import {  TrialSuite, DefaultAssertionContextFactory, DefaultTestResultFactory } 
+from '../../tests4ts.ts.adligo.org/src/tests4ts.mjs';
+import { Test, TestParams}
+  from '../../tests4ts.ts.adligo.org/src/tests.mjs';
 import { ApiTrial } from '../../tests4ts.ts.adligo.org/src/trials.mjs';
 import { I_AssertionContext, I_Test } from '@ts.adligo.org/i_tests4ts/dist/i_tests4ts.mjs';
 import { JUnitXmlGenerator } from '../../junit-xml-tests4j.ts.adligo.org/src/junitXmlTests4jGenerator.mjs';
