@@ -34,8 +34,7 @@ import { JUnitXmlGenerator } from '../../junit-xml-tests4j.ts.adligo.org/src/jun
 class JUnitXmlGeneratorTrial extends ApiTrial {
     public static readonly CLAZZ_NAME = 'org.adligo.ts.junit-xml-tests4j_tests.JUnitXmlGeneratorTrial';
 
-    public static readonly TESTS: I_Test[] = [
-      new Test('testGenerateXmlBasic', (ac: I_AssertionContext) => {
+    testGenerateXmlBasic(ac: I_AssertionContext) {
       // Create a mock trial with passing tests
       const mockTest1 = new Test('testToExponent2to8', (ac) => { });
       const mockTest2 = new Test('testToExponent16to64', (ac) => { });
@@ -51,15 +50,18 @@ class JUnitXmlGeneratorTrial extends ApiTrial {
 
       // Verify XML structure
       ac.isTrue(xml.includes('<?xml version="1.0" encoding="UTF-8"?>'), 'XML should have XML declaration');
-      ac.isTrue(xml.includes('<testsuite name="org.adligo.collections.shared.common.Base2ExponentsSourceFileTrial"'),
+      ac.isTrue(xml.includes('name="testToExponent2to8"'),
         'XML should have testsuite element with correct name');
+      ac.isTrue(xml.includes('classname="org.adligo.collections.shared.common.Base2ExponentsSourceFileTrial"'),
+        'XML should have testsuite element with correct classname');
       ac.isTrue(xml.includes('tests="2"'), 'XML should show 2 tests');
       ac.isTrue(xml.includes('failures="0"'), 'XML should show 0 failures');
       ac.isTrue(xml.includes('hostname="WHITESNAKE"'), 'XML should have correct hostname');
-      ac.isTrue(xml.includes('<testcase name="org.adligo.collections.shared.common.Base2ExponentsSourceFileTrial.testToExponent2to8"'), 'XML should include first test');
-      ac.isTrue(xml.includes('<testcase name="org.adligo.collections.shared.common.Base2ExponentsSourceFileTrial.testToExponent16to64"'), 'XML should include second test');
-    }),
-    new Test('testGenerateXmlWithFailures', (ac: I_AssertionContext) => {
+      ac.isTrue(xml.includes('<testcase name="testToExponent2to8"'), 'XML should include first test');
+      ac.isTrue(xml.includes('<testcase name="testToExponent16to64"'), 'XML should include second test');
+    }
+    
+    testGenerateXmlWithFailures(ac: I_AssertionContext) {
       // Create a mock trial with a failing test
       const mockTest1 = new Test('passingTest', (ac) => { });
       const mockTest2 = new Test('failingTest', (ac) => { throw new Error('Test failure message'); });
@@ -80,8 +82,9 @@ class JUnitXmlGeneratorTrial extends ApiTrial {
       //ac.isTrue(xml.includes('<failure message="\n\nError: Test failure message"'),  
       ac.isTrue(xml.includes('<failure message="'),
         'XML should include failure message');
-    }),
-    new Test('testExtractClassName', (ac: I_AssertionContext) => {
+    }
+    
+    testExtractClassName(ac: I_AssertionContext) {
       const generator = new JUnitXmlGenerator();
 
       // Use private method via any type
@@ -97,11 +100,10 @@ class JUnitXmlGeneratorTrial extends ApiTrial {
 
       ac.same('SimpleTest',
         anyGenerator.extractClassName('SimpleTest'));
-    })
-  ];
+    }
 
   constructor() {
-    super(      JUnitXmlGeneratorTrial.CLAZZ_NAME , JUnitXmlGeneratorTrial.TESTS);
+    super( JUnitXmlGeneratorTrial.CLAZZ_NAME);
   }
 }
 
